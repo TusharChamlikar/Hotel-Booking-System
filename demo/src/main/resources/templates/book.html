@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        background: url(../static/images/Screenshot\ 2024-09-22\ 201526.png);
+       background-size: 100%;
+    }
+    .bookform{
+            height:400px;
+            width:700px;
+            background-color: #042b69;
+            border-color:antiquewhite;
+            border-style:double;
+            border-width: 13px;
+            padding:72px;
+            color:bisque;
+            font-size: larger;
+            text-align: center;
+            padding-bottom: 13px;
+            
+        }
+        .name{
+            padding:10px;
+            display: block;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    
+</style>
+<body>
+    <div class="bookform">
+    <form method="post" th:object = "${book1}">
+        <label>Enter Your Name</label>
+        <input class="name" th:field="${book1.name}">
+       <label>Enter Your lastname</label>
+        <input class="name" th:field="${book1.lastname}">
+       <label>Enter Your username</label>
+        <input class="name" th:field="${book1.username}">
+       <label>Enter Yourpassword</label>
+        <input class="name" th:field="${book1.password}">
+       <label>Enter date</label>
+       <input   class="name" th:field="${book1.date}">
+       <button class="name" type="submit">BOOK NOW</button>
+    </form>
+</div>
+</body>
+</html>

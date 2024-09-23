@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ <style>
+    body{
+        background-color: #8bb3f3;
+    }
+    .container{
+            height:300px;
+            width:700px;
+            background-color: #042b69;
+            border-color:antiquewhite;
+            border-style:double;
+            border-width: 13px;
+            padding:72px;
+            color:bisque;
+            font-size: larger;
+            text-align: center;
+            padding-bottom: 13px;
+        }
+        .form-control{
+            padding-right:13px;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+            margin-top: 10px;
+        }
+ </style>   
+</head>
+<body>
+    
+    <div><h1>SINGNUP</h1></div>
+    <div class="container">
+        <form action="#"  th:action="@{/signup}" th:object="${cred}" method="post">
+            <div class="name">
+                <label>Enter Your Name</label>
+                <input class="form-control" type="text" th:field="${cred.firstname}">
+            </div>
+            <div class="pass">
+                <label>Enter Your lastname</label>
+                <input class="form-control" type="text" th:field="${cred.lastname}">
+            </div>
+            <div class="mob">
+                <label>Enter Your UserName</label>
+                <input class="form-control" type="text" th:field="${cred.mobilenumber}">
+            </div>
+            <div class="username1">
+                <label>Enter Your UserName</label>
+                <input class="form-control" type="text" th:field="${cred.username}">
+            </div>
+            <div class="pass">
+                <label>Enter Password</label>
+                <input class="form-control" type="text" th:field="${cred.password}">
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

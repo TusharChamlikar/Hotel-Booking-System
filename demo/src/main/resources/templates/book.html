@@ -3,51 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<style>
-    body{
-        background: url(../static/images/Screenshot\ 2024-09-22\ 201526.png);
-       background-size: 100%;
-    }
-    .bookform{
-            height:400px;
-            width:700px;
-            background-color: #042b69;
-            border-color:antiquewhite;
-            border-style:double;
-            border-width: 13px;
-            padding:72px;
-            color:bisque;
-            font-size: larger;
-            text-align: center;
-            padding-bottom: 13px;
-            
+    <title>Booking Form</title>
+    <style>
+        body {
+            background: url(../static/images/Screenshot\ 2024-09-22\ 201526.png) no-repeat center center fixed;
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
-        .name{
-            padding:10px;
+        .bookform {
+            width: 90%;
+            max-width: 600px;
+            background-color: rgba(4, 43, 105, 0.9);
+            border: 3px double antiquewhite;
+            border-radius: 15px;
+            padding: 40px;
+            color: bisque;
+            font-size: 1.1rem;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+        label {
             display: block;
-            text-align: center;
-            margin-left: auto;
-            margin-right: auto;
+            margin-bottom: 8px;
+            font-weight: bold;
         }
-    
-</style>
+        .name {
+            width: 90%;
+            max-width: 500px;
+            padding: 10px;
+            margin: 10px auto 20px auto;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+            display: block;
+        }
+        .name:focus {
+            outline: none;
+            border-color: #8bb3f3;
+            box-shadow: 0 0 8px rgba(139, 179, 243, 0.8);
+        }
+        button {
+            width: 90%;
+            max-width: 500px;
+            padding: 12px;
+            margin-top: 20px;
+            background-color: #8bb3f3;
+            border: none;
+            border-radius: 5px;
+            color: #042b69;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        button:hover {
+            background-color: #75a3e4;
+        }
+    </style>
+</head>
 <body>
     <div class="bookform">
-    <form method="post" th:object = "${book1}">
-        <label>Enter Your Name</label>
-        <input class="name" th:field="${book1.name}">
-       <label>Enter Your lastname</label>
-        <input class="name" th:field="${book1.lastname}">
-       <label>Enter Your username</label>
-        <input class="name" th:field="${book1.username}">
-       <label>Enter Yourpassword</label>
-        <input class="name" th:field="${book1.password}">
-       <label>Enter date</label>
-       <input   class="name" th:field="${book1.date}">
-       <button class="name" type="submit">BOOK NOW</button>
-    </form>
-</div>
+        <form method="post" th:object="${book1}">
+            <label for="name">Enter Your Name</label>
+            <input id="name" class="name" type="text" th:field="${book1.name}" placeholder="Your First Name">
+            
+            <label for="lastname">Enter Your Last Name</label>
+            <input id="lastname" class="name" type="text" th:field="${book1.lastname}" placeholder="Your Last Name">
+            
+            <label for="username">Enter Your Username</label>
+            <input id="username" class="name" type="text" th:field="${book1.username}" placeholder="Username">
+            
+            <label for="password">Enter Your Password</label>
+            <input id="password" class="name" type="password" th:field="${book1.password}" placeholder="Password">
+            
+            <label for="date">Enter Date</label>
+            <input id="date" class="name" type="date" th:field="${book1.date}">
+            
+            <button type="submit">BOOK NOW</button>
+        </form>
+    </div>
 </body>
 </html>

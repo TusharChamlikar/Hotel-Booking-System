@@ -27,8 +27,6 @@ public ModelAndView login() {
 @PostMapping("/login")
 public String loginsubmit(@ModelAttribute Login credentials ) {
     //TODO: process POST request
-    usera=credentials.getUsername();
-    password1=credentials.getPassword();
     Login user = repo.login(credentials.getUsername(),credentials.getPassword());
     if(Objects.nonNull(user)){
         return "home.html";
